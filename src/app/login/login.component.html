@@ -1,11 +1,15 @@
+<div class="alert" *ngIf="message" [ngClass]="{'alert-success': messageType == 'success', 'alert-danger': messageType == 'error'}">
+    {{message}}
+</div>
+
 <div class="card">
     <div class="card-body">
         <h2>Login</h2>
         <form [formGroup]="loginFormGrp" (ngSubmit)="onSubmitForm()">
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="form.email.errors">
-                <div *ngIf="form.email.errors" class="invalid-feedback">
+                <input type="email" class="form-control" id="email" formControlName="email" [class.is-invalid]="form.email.errors && form.email.touched">
+                <div *ngIf="form.email.errors && form.email.touched" class="invalid-feedback">
                     <div *ngIf="form.email.errors.required">Email is required.</div>
                     <div *ngIf="form.email.errors.pattern">Please provide a valid email address.</div>
                 </div>
@@ -13,8 +17,8 @@
         
             <div class="form-group">
                 <label for="pass">Password:</label>
-                <input type="password" class="form-control" id="pass" formControlName="password" minlength="6" maxlength="20" [class.is-invalid]="form.password.errors">
-                <div *ngIf="form.password.errors" class="invalid-feedback">
+                <input type="password" class="form-control" id="pass" formControlName="password" minlength="6" maxlength="20" [class.is-invalid]="form.password.errors && form.password.touched">
+                <div *ngIf="form.password.errors && form.password.touched" class="invalid-feedback">
                     <div *ngIf="form.password.errors.required">Password is required.</div>
                     <div *ngIf="form.password.errors.minlength">Password must be at least 6 characters.</div>
                 </div>
