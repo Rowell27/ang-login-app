@@ -1,27 +1,21 @@
 # AngularExerciseApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+This is a simple login app that was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
-## Development server
+## Required
++ NodeJS, to run the project (link: https://nodejs.org/en/)
++ Git, for cloning this repo (link: https://git-scm.com/downloads)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
+## Instructions
++ Clone or fork this repository.
++ Navigate on "ang-login-app" folder using command prompt, then install node_modules needed by using the command **npm install**.
++ Once done, run **ng serve**/**npm start** to launch the project. 
++ Open your browser then type **localhost:4200** on the URL bar to view it.
+ 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `ng test` on console to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## What to improve?
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Some of the codes in this project needs to be refactor for better code design and structure. Code readability is important as well to easily understand the code structure, thus the correct coding standards for Angular must be applied to some parts of this app. It should also have a state management implemented to check the state for user currently logged in.
