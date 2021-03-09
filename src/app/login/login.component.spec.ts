@@ -42,8 +42,22 @@ describe('LoginComponent', () => {
     const form = component.loginFormGrp.controls;
     form.email.setValue('dummy@test.com');
     form.password.setValue('dummy123');
-    spyOn(component, 'onSubmitForm')
+    spyOn(component, 'onSubmitForm');
     fixture.nativeElement.querySelector('button').click();
     expect(component.onSubmitForm).toHaveBeenCalled();
+  }));
+
+  it('should validate email to be invalid', async(() => {
+    const form = component.loginFormGrp.controls;
+    form.email.setValue('dummytest.com');
+    form.password.setValue('dummy123');
+    expect(component.loginFormGrp.valid).toBeFalsy();
+  }));
+
+  it('should validate pass to be invalid', async(() => {
+    const form = component.loginFormGrp.controls;
+    form.email.setValue('dummy@test.com');
+    form.password.setValue('a');
+    expect(component.loginFormGrp.valid).toBeFalsy();
   }));
 });
